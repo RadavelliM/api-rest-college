@@ -11,6 +11,7 @@ import alunoRoute from "./src/routes/alunoRoute";
 import usuarioRoute from "./src/routes/usuarioRoute";
 import JWTRoute from "./src/routes/JWTRoute";
 import UploadRoute from "./src/routes/UploadRoute";
+import ProfessorRoute from './src/routes/professorRoute'
 
 import "./src/database/modelConnection";
 
@@ -49,6 +50,7 @@ class App {
     this.app.use("/usuario/", usuarioRoute);
     this.app.use("/tokens/", JWTRoute);
     this.app.use("/upload/", UploadRoute);
+    this.app.use("/professor/", ProfessorRoute);
   }
 }
 
