@@ -14,6 +14,7 @@ import UploadRoute from "./src/routes/UploadRoute";
 import ProfessorRoute from './src/routes/professorRoute'
 import MateriaRoute from './src/routes/materiaRoute'
 import CursoRoute from './src/routes/cursoRoute'
+import TurmaRoute from './src/routes/turmaRoute'
 
 import "./src/database/modelConnection";
 
@@ -55,6 +56,7 @@ class App {
     this.app.use("/professores/", ProfessorRoute);
     this.app.use("/materias/", MateriaRoute);
     this.app.use("/cursos/", CursoRoute);
+    this.app.use("/turmas/", TurmaRoute);
   }
 }
 

@@ -7,10 +7,11 @@ import foto from "../models/foto";
 import professor from "../models/professor"
 import materia from '../models/materia'
 import curso from '../models/curso'
+import turmas from '../models/turmas'
 
 const conncetion = new Sequelize(databaseConfig);
 
-const models = [aluno, usuario, foto, professor, materia, curso];
+const models = [aluno, usuario, foto, professor, materia, curso, turmas];
 models.forEach((model) => model.init(conncetion));
 models.forEach(
   (model) => model.associate && model.associate(conncetion.models)
