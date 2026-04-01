@@ -26,6 +26,11 @@ export default class Materias extends Model {
     );
     return this;
   }
+
+
+  static associate(models) {
+    this.belongsTo(models.Atribuicoes, {foreignKey: 'atribuicao_materia'})
+  }
 }
 
 

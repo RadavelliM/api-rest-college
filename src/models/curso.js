@@ -27,4 +27,8 @@ export default class Curso extends Model {
     );
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Atribuicoes, {foreignKey: 'atribuicao_curso'})
+  }
 }
