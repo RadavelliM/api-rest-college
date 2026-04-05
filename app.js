@@ -3,7 +3,7 @@ import path from "path";
 dotenv.config(path.resolve(__dirname, ".env"));
 
 import express from "express";
-import cors from 'cors'
+import cors from "cors";
 import helmet from "helmet";
 
 import homeRoute from "./src/routes/homeRoute";
@@ -11,26 +11,26 @@ import alunoRoute from "./src/routes/alunoRoute";
 import usuarioRoute from "./src/routes/usuarioRoute";
 import JWTRoute from "./src/routes/JWTRoute";
 import UploadRoute from "./src/routes/UploadRoute";
-import ProfessorRoute from './src/routes/professorRoute'
-import MateriaRoute from './src/routes/materiaRoute'
-import CursoRoute from './src/routes/cursoRoute'
-import TurmaRoute from './src/routes/turmaRoute'
-import AtribuicaoRoute from './src/routes/atribuicaoRoute'
+import ProfessorRoute from "./src/routes/professorRoute";
+import MateriaRoute from "./src/routes/materiaRoute";
+import CursoRoute from "./src/routes/cursoRoute";
+import TurmaRoute from "./src/routes/turmaRoute";
+import AtribuicaoRoute from "./src/routes/atribuicaoRoute";
+import MatriculaRoute from "./src/routes/matriculaRoute";
 
 import "./src/database/modelConnection";
 
-
-const allowedSites = ['http://localhost:3000']
+const allowedSites = ["http://localhost:3000"];
 
 const corsOptions = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (allowedSites.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error('not Allowed by CORS'))
+      callback(new Error("not Allowed by CORS"));
     }
   }
-}
+};
 
 class App {
   constructor() {
@@ -40,8 +40,8 @@ class App {
   }
 
   middlewares() {
-    this.app.use(cors(corsOptions))
-    this.app.use(helmet())
+    this.app.use(cors(corsOptions));
+    this.app.use(helmet());
 
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
@@ -59,6 +59,7 @@ class App {
     this.app.use("/cursos/", CursoRoute);
     this.app.use("/turmas/", TurmaRoute);
     this.app.use("/atribuicoes/", AtribuicaoRoute);
+    this.app.use("/matriculas/", MatriculaRoute);
   }
 }
 

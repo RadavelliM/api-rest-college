@@ -1,25 +1,27 @@
 import Sequelize, { Model } from "sequelize";
 
-export default class Atribuicoes extends Model {
+export default class Matricula extends Model {
   static init(sequelize) {
     super.init(
       {
-        atribuicao_id: {
+        matricula_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
           allowNull: false
         },
 
-        atribuicao_curso: {
+        matricula_id_aluno: {
           type: Sequelize.INTEGER,
           allowNull: false
         },
-        atribuicao_professor: {
+
+        matricula_turma: {
           type: Sequelize.INTEGER,
           allowNull: false
         },
-        atribuicao_materia: {
+
+        matricula_atribuicao: {
           type: Sequelize.INTEGER,
           allowNull: false
         }
@@ -30,9 +32,8 @@ export default class Atribuicoes extends Model {
   }
 
   static associate(models) {
-    this.hasMany(models.Curso, { foreignKey: "curso_id" });
-    this.hasMany(models.Professore, { foreignKey: "professor_id" });
-    this.hasMany(models.Materias, { foreignKey: "materia_id" });
-    this.belongsTo(models.Matricula, { foreignKey: "matricula_atribuicao" });
+    this.hasMany(models.Aluno, { foreignKey: "id" });
+    this.hasMany(models.Turmas, { foreignKey: "turma_id" });
+    this.hasMany(models.Atribuicoes, { foreignKey: "atribuicao_id" });
   }
 }

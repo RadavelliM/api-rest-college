@@ -11,7 +11,6 @@ export default class Turmas extends Model {
           allowNull: false
         },
 
-
         turma_sala: {
           type: Sequelize.STRING,
           defaultValue: "",
@@ -19,7 +18,7 @@ export default class Turmas extends Model {
             len: {
               args: [2, 255],
               msg: 'Campo "sobrenome" deve ter entre 2 e 255 caracteres.'
-            },
+            }
           }
         },
 
@@ -27,11 +26,13 @@ export default class Turmas extends Model {
           type: Sequelize.INTEGER,
           defaultValue: "",
           allowNull: false
-        },
-
+        }
       },
       { sequelize }
     );
     return this;
+  }
+  static associate(models) {
+    this.belongsTo(models.Matricula, { foreignKey: "matricula_turma" });
   }
 }
