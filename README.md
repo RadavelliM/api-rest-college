@@ -1,6 +1,13 @@
 <h1 align="center"> API REST - UNIVERSIDADE </h1>
 
-<h2 align="center">🚀 Projeto de criação de uma API REST em Node.js com MariaDB e Sequelize ORM para uma universidade </h2>
+<h2 align="center">
+  🚀 Projeto de criação de uma API REST em Node.js com MariaDB e Sequelize ORM para uma universidade
+</h2>
+
+
+<h2>
+  A API REST conta com o gerencimento completo de uma universidade, permitindo cadastro de alunos, professores, cursos, disciplinas, turmas, e lançamento de notas, além de geração de boletim
+</h2>
 
 ### 💻 Backend
 
