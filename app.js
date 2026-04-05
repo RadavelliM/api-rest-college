@@ -17,6 +17,7 @@ import CursoRoute from "./src/routes/cursoRoute";
 import TurmaRoute from "./src/routes/turmaRoute";
 import AtribuicaoRoute from "./src/routes/atribuicaoRoute";
 import MatriculaRoute from "./src/routes/matriculaRoute";
+import NotaRoute from "./src/routes/notaRoute";
 
 import "./src/database/modelConnection";
 
@@ -60,6 +61,7 @@ class App {
     this.app.use("/turmas/", TurmaRoute);
     this.app.use("/atribuicoes/", AtribuicaoRoute);
     this.app.use("/matriculas/", MatriculaRoute);
+    this.app.use("/notas/", NotaRoute);
   }
 }
 

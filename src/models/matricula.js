@@ -35,5 +35,6 @@ export default class Matricula extends Model {
     this.hasMany(models.Aluno, { foreignKey: "id" });
     this.hasMany(models.Turmas, { foreignKey: "turma_id" });
     this.hasMany(models.Atribuicoes, { foreignKey: "atribuicao_id" });
+    this.hasMany(models.Notas, { foreignKey: "nota_id" });
   }
 }

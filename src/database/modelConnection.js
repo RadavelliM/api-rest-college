@@ -10,6 +10,7 @@ import curso from "../models/curso";
 import turmas from "../models/turmas";
 import atribuicao from "../models/atribuicoes";
 import matricula from "../models/matricula";
+import nota from "../models/nota";
 
 const conncetion = new Sequelize(databaseConfig);
 
@@ -22,7 +23,8 @@ const models = [
   curso,
   turmas,
   atribuicao,
-  matricula
+  matricula,
+  nota
 ];
 models.forEach((model) => model.init(conncetion));
 models.forEach(
